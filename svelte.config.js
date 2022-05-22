@@ -25,8 +25,8 @@ export default {
 			],
 			resolve: {
 				alias: {
-					'@UI': path.resolve( 'src/components' ),
-					$routes: path.resolve( 'src/routes' ),
+					$UI: path.resolve( '/src/components' ),
+					$routes: path.resolve( '/src/routes' ),
 				}
 			}
 		},

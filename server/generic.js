@@ -8,7 +8,7 @@ export const sources = {
         preprocess: ( text ) => JSON.parse( text.split( `beconfig-store_state">` )[ 1 ].split( `</script>` )[ 0 ] ),
         process: be_process
     },
-    insta: {
+    instagram: {
         id: ( id ) => `https://www.instagram.com/${ id }/?__a=1`,
         preprocess: JSON.parse,
         process: in_process

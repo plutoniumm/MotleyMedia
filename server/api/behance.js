@@ -20,10 +20,11 @@ const process = json => {
     const works = raw_data.map( e => {
         const { name, share_url, published_on, covers } = e;
         return {
+            source: "behance",
             user,
             name: name.replaceAll( '- ', '-' ).replaceAll( ' -', '-' ),
             url: share_url,
-            published_on: published_on * 1000,
+            time: published_on * 1000,
             image: getImage( covers )
         };
     } );
