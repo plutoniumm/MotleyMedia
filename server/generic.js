@@ -9,6 +9,7 @@ export const sources = {
         process: be_process
     },
     instagram: {
+        alt: ( id ) => `https://www.instagram.com/${ id }/channel/?__a=1`,
         id: ( id ) => `https://www.instagram.com/${ id }/?__a=1`,
         preprocess: JSON.parse,
         process: in_process

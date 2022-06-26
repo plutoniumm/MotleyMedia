@@ -1,12 +1,13 @@
 {
   "name": "motleymedia",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "svelte-kit dev",
     "server": "node ./server",
     "server:dev": "nodemon ./server",
     "build": "svelte-kit build",
-    "preview": "svelte-kit preview"
+    "deploy": "npx gh-pages -d build -t true && rm -rf build .svelte*",
+    "git": "git add . && echo 'Add Message?' && read msg && git commit -m '$msg' && git push"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",

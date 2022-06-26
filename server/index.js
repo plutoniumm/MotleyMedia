@@ -10,11 +10,23 @@ app.get( '/*', ( req, res ) => {
     const { source, id } = split( req.url );
     const src = sources[ source ];
 
-    get( src.id( id ) ).then( r => {
-        const raw = src.preprocess( r );
-        const data = src.process( raw );
+    try {
+        const data = get( src, id );
         res.send( data );
-    } );
+        get( src.id( id ) ).then( r => {
+            const raw = src.preprocess( r );
+            const data = src.process( raw );
+            res.send( data );
+        } );
+    } catch {
+        const data = get( src, id );
+        res.send( data );
+        get( src.alt( id ) ).then( r => {
+            const raw = src.preprocess( r );
+            const data = src.process( raw );
+            res.send( data );
+        } );
+    }
 } );
 
 

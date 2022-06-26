@@ -5,6 +5,7 @@
 	const subscriptions = [
 		{ type: "instagram", id: "art_saransh" },
 		{ type: "behance", id: "isharastogi3" },
+		{ type: "behance", id: "yaminikhullar" },
 	];
 
 	let promises;
